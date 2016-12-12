@@ -38,4 +38,10 @@ class User extends Authenticatable
     public function address() {
         return $this->hasOne('App\Address');
     }
+
+    public function roles() {
+        // This one if we got custom table naming
+//        return $this->belongsToMany('App\Role', 'roles_user');
+        return $this->belongsToMany('App\Role');
+    }
 }

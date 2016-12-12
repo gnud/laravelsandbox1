@@ -4,6 +4,14 @@
 <div class="container">
     <h1>{{ $user->name }}'s Profile</h1>
     <h2>Country: {{ $user->address->country}}</h2>
+    <h2>Roles</h2>
+    <ul>
+    @foreach($user->roles as $role)
+        <li>
+            {{ $role->name }}
+        </li>
+    @endforeach
+    </ul>
 <hr>
     @foreach($user->articles as $article)
         <div class="row">
