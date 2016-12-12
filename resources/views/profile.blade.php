@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="container">
-    <h1>{{ $user->name }}</h1>
+    <h1>{{ $user->name }}'s Profile</h1>
+    <h2>Country: {{ $user->address->country}}</h2>
 <hr>
     @foreach($user->articles as $article)
         <div class="row">
