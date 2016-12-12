@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Country;
 use App\Http\Requests;
 use App\User;
 use Illuminate\Http\Request;
@@ -40,5 +41,17 @@ class HomeController extends Controller
         $user = User::where('name', $username)->firstOrFail();
 
         return view('profile')->with('user', $user);
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function posts($countryId)
+    {
+        $country = Country::findOrfail($countryId);
+
+        return view('country_posts')->with('country', $country);
     }
 }

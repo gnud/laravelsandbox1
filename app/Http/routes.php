@@ -19,3 +19,4 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/profile/{username}', 'HomeController@profile');
+Route::get('/posts/country/{countryId}', 'HomeController@posts');

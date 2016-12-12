@@ -2,18 +2,8 @@
 
 @section('content')
 <div class="container">
-    <h1>{{ $user->name }}'s Profile</h1>
-    <h2>Country: {{ $user->country->name}}</h2>
-    <h2>Roles</h2>
-    <ul>
-    @foreach($user->roles as $role)
-        <li>
-            {{ $role->name }}
-        </li>
-    @endforeach
-    </ul>
-<hr>
-    @foreach($user->articles as $article)
+    <h1>{{ $country->name }}</h1>
+    @foreach($country->articles as $article)
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">

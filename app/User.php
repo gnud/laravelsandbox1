@@ -35,8 +35,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Article');
     }
 
-    public function address() {
-        return $this->hasOne('App\Address');
+    public function country() {
+        return $this->belongsTo('App\Country');
     }
 
     public function roles() {
