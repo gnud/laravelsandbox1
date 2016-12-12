@@ -23,4 +23,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    /**
+     * Notes:
+     * - in the tutorial says use 'Article', but in the 5.2 documentation belongsTo has namespace path as well
+     * without it fails
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function articles() {
+        return $this->hasMany('App\Article');
+    }
 }

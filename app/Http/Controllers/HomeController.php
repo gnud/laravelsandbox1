@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\Http\Requests;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $article = Article::all();
+        return view('articles')->with('articles', $article);
+//        return view('home');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function profile($username)
+    {
+        $user = User::where('name', $username)->firstOrFail();
+
+        return view('profile')->with('user', $user);
     }
 }
