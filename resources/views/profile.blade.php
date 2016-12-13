@@ -27,5 +27,11 @@
         </div>
     @endforeach
 
+    <h1>Comments</h1>
+    <ul>
+    @foreach($user->comments as $comment)
+        <li>{{ $comment->body }}</li>
+    @endforeach
+    </ul>
 </div>
 @endsection
