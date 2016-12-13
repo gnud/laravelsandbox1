@@ -1,3 +1,18 @@
+# Development guide
+## Start from git source
+First create your database:
+     ```CREATE DATABASE `sandboxdb1` CHARACTER SET utf8 COLLATE utf8_general_ci;```
+
+Setup procedure
+```
+composer install
+php artisan key:generate
+php artisan migrate
+```
+
+This makes sure debugging will always work
+```php -dxdebug.remote_autostart  artisan serve --host 0.0.0.0 --port 8003```
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
